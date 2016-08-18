@@ -20,10 +20,14 @@ var civic = new Car({
   year: 2001,
   miles: 50000
 });
-
+console.log(civic.toString());
 // ES5 Example of constructor function
+
+(function(){
 function Car() {
   this.model = opts.model;
 }
 Car.prototype.toString = function() {
 }
+}());
+
