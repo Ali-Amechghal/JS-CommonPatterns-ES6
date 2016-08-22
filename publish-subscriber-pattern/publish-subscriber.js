@@ -5,12 +5,12 @@ class PubSub {
   constructor() {
     this.handlers = [];
   }
-
+  //add observer to the list
   subscribe(event, handler, context) {
     if (typeof context === 'undefined') { context = handler; }
     this.handlers.push({ event: event, handler: handler.bind(context) });
   }
-
+  //publish message that will be received by all subscribers
   publish(event, args) {
     this.handlers.forEach(topic => {
       if (topic.event === event) {
